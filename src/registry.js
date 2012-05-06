@@ -6,5 +6,6 @@ define('registry', {
     'http://en.wikipedia.org/wiki': 'wikipedia/page',
     'http://fr.wikipedia.org/wiki': 'wikipedia/page',
     'http://wikipedia.org/wiki': 'wikipedia/page',
-    'http://data.perseus.org/people/smith': 'perseus/smith'
+    'http://data.perseus.org/people/smith': 'perseus/smith',
+    'http://opencontext.org': 'opencontext/opencontext'
 });
