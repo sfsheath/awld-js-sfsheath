@@ -23,7 +23,8 @@ define(['jquery'], function($) {
                     'nomisma_region': 'place',
                     'hoard': 'place',
                     'mint': 'place',
-                    'material': 'object'
+                    'material': 'object',
+                    'type_series_item': 'object'
                 },
                 type = $('[typeof]', xml).first().attr('typeof');
             if (type) return map[type];
