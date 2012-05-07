@@ -10,9 +10,10 @@ define(['jquery'], function($) {
         },
         parseData: function(xml) {
             var getText = awld.accessor(xml);
+            var imageURI = getText('[id = "all_media"] img', 'src')
             return {
                 name: "OpenContext " + getText('[id = "item_name"]'),
-                description: getText('[id = "item_class"]')
+                description: getText('[id = "item_class"]') + '<br/><img style="max-width:150" src="'+imageURI+'"/>'
             };
         },
     };
