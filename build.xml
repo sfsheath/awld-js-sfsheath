@@ -4,7 +4,7 @@
     <!-- define ant-contrib tasks -->
     <taskdef resource="net/sf/antcontrib/antlib.xml">
         <classpath>
-            <pathelement location="lib/ant-contrib-1.0b3.jar"/>
+            <pathelement location="/Library/Java/Extensions/ant-contrib/ant-contrib-1.0b3.jar"/>
         </classpath>
     </taskdef>
     
