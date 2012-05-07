@@ -1,12 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.1//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-2.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>AWLD Test Page</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<script src="lib/requirejs/require.min.js"></script>
-        <script src="src/awld.js"></script>
-        <script>
+<script src="lib/requirejs/require.min.js" type="text/javascript"></script>
+        <script src="src/awld.js" type="text/javascript"></script>
+        <script type="text/javascript">
             awld.init();
         </script>
         <style type="text/css">
@@ -27,6 +27,8 @@ body {
 <body>
   <h1 style="text-align:center">Ancient World Linked Data<br/>Javascript Library (awld.js) Test Page</h1>
 
+ <p><i>This page is running an unoptimized copy of the library so you may see links loading the first time you click on the widget (that is about to appear just below) or you mouse-over a link.</i></p>
+
  <div>Auto-generated widget collects recognized URIs and organizes them by type and source:<br/><br/>
   <div class="awld-index"></div>
  </div>
@@ -35,17 +37,16 @@ body {
 
 
 <h2>About</h2>
-<p>This page will soon have more discussion but for now see <a target="_new" href="http://github.com/nrabinowitz/awld-js">http://github.com/nrabinowitz/awld-js</a>. The version of awld.js running here is a development branch and may support interactions not yet deployed to the GitHub repository.</p>
 
-<p>The general idea is that awld.js enables user interactions when you hover over links. Moving your mouse over "Troy" in the next paragraph should show you a map on the basis of JSON pulled from Pleiades. "Achilles" will show the opening paragraph of the Wikipedia page. The links in the Wikipedia snippet aren't working yet because they're relative. I'm sure we'll fix that soon enough.</p>
+<p>The general idea is that awld.js enables user interactions when you hover over links. Moving your mouse over "Troy" in the next section should show you a map on the basis of JSON pulled from Pleiades. "Achilles" will show the opening paragraph of the Wikipedia page.  See <a target="_new" href="http://github.com/nrabinowitz/awld-js">http://github.com/nrabinowitz/awld-js</a> for the main code repository. The version of awld.js running here is a development branch and may support interactions not yet deployed to the main GitHub. Gran the almost latest code <a href="https://github.com/sfsheath/awld-js-sfsheath">here</a>. And yes, this project is  in the proof-of-concept, pre-alpha, use-at-your-own-risk stage.</p>
 
 <div class="awld-scope">
   <h2>Text with all links working</h2>
- <p><i>Note: the following paragraphs are in a div marked 'class="awld-scope"'. When such an element is present, the library will restrict its work to that part of a document.</i></p>
+ <p><i>Note: the following paragraphs are in a div marked 'class="awld-scope"'. When such an element is present, the library will restrict its work to that part of a document. At the bottom of this page is a link to Wikipedia that is outside the marked div so that it is ignored by awld.js.</i></p>
  
-  <p id="pleiades"><a href="http://pleiades.stoa.org/places/550595">Troy</a> is the setting of Homer's Iliad, a story that may well reflect "geopolitical" circumstances in the Late Bronze Age. <a class="awld-type-person" href="http://en.wikipedia.org/wiki/Achilles">Achilles</a> is a major character.</p>
+  <p id="pleiades"><a href="http://pleiades.stoa.org/places/550595">Troy</a> is the setting of Homer's Iliad, a story that may well reflect "geopolitical" circumstances in the Late Bronze Age. <a class="awld-type-person" href="http://en.wikipedia.org/wiki/Achilles">Achilles</a> is a major character.  The links in the snippets that appear for Wikipedia references aren't working yet because they're relative web addresses. I'm sure we'll fix that soon enough.</p>
   
-  <p id="pelagios">The version of awld-js running on this page will format links to the <a href="http://pelagios-project.blogspot.com">Pelagios project</a>. As in, <a href="http://pleiades.stoa.org/places/433032">Pompeii</a>.
+  <p id="pelagios">The version of awld-js running on this page will format links to the <a href="http://pelagios-project.blogspot.com">Pelagios project</a>. As in, <a href="http://pleiades.stoa.org/places/433032">Pompeii</a>.</p>
 
   <p id="loc">Classical historiography is a well-established discipline.<sup><a href="http://lccn.loc.gov/a55003923">loc link</a></sup> The Library of Congress works well with awld.js. The title displayed in the widget is pulled from the LOC website.</p>
   
@@ -53,18 +54,54 @@ body {
 
   <p id="nomisma">The mint at <a href="http://nomisma.org/id/athens">Athens</a> was a prolific producer of silver coins that appear in many Archaic through Hellenistic hoards. Click through to the Nomisma page to see a map of hoards with coins of Athens in them. Nomisma also hosts a representation of <a href="http://lccn.loc.gov/77164450">Crawford</a>'s typology of Roman Republican coins: e.g. <a class="awld-type-object" href="http://nomisma.org/id/rrc-525.4a">525/4a</a>.</p>
 
-  <p id="ars">The ongoing export of <a class="awld-type-object" href="http://en.wikipedia.org/wiki/African_red_slip">African red-slip</a> (ARS) is an indicator of Late Roman economic vitality. <a class="awld-type-object" href="http://opencontext.org/subjects/73221A18-7A7C-44C4-36CD-0CECF8F7A725">This sherd published by OpenContext.org</a> shows that ARS was carried to Petra in Jordan.  In the Eastern Mediterranean, <a class="awld-type-concept" href="http://wikipedia.org/wiki/Eastern_sigillata_C">Eastern Sigillata C</a>, produced at ancient <a href="http://pleiades.stoa.org/places/550833">Pitane (modern Candarli)</a> from the early Imperial period into the 4th Century AD, was succeeded by <a href="http://wikipedia.org/wiki/Phocaean_red_slip">Phocaean Red Slip</a>, produced at <a href="http://pleiades.stoa.org/places/550823">Phocaea</a> until the 7th century.</p>
+  <p id="roman_pottery">The ongoing export of <a class="awld-type-object" href="http://en.wikipedia.org/wiki/African_red_slip">African red-slip</a> (ARS) is an indicator of Late Roman economic vitality. <a class="awld-type-object" href="http://opencontext.org/subjects/73221A18-7A7C-44C4-36CD-0CECF8F7A725">This sherd published by OpenContext.org</a> shows that ARS was carried to Petra in Jordan.  In the Eastern Mediterranean, <a class="awld-type-concept" href="http://wikipedia.org/wiki/Eastern_sigillata_C">Eastern Sigillata C</a>, produced at ancient <a href="http://pleiades.stoa.org/places/550833">Pitane (modern Candarli)</a> from the early Imperial period into the 4th Century AD, was succeeded by <a href="http://wikipedia.org/wiki/Phocaean_red_slip">Phocaean Red Slip</a>, produced at <a href="http://pleiades.stoa.org/places/550823">Phocaea</a> until the 7th century.</p>
 
-  <p>There are many <a href="http://data.perseus.org/people/smith:alexander-3">Alexanders</a> in the ancient world.</p>
+  <p>There are many Alexanders in the ancient world, both <a class="awld-type-person" href="http://en.wikipedia.org/wiki/Alexander_the_Great">great</a> and <a href="http://data.perseus.org/people/smith:alexander-3">not so great</a>.</p>
+  
+  <p>awld.js works within the context of standard html markup. Here's an html table with a few Roman emperors listed with their place of birth and place of death. The close spacing of these links suggests we need to refine the interface for closing popups. Eventually we will want such interactions to be configurable.</p>
+  
+  <table style="font-family:sans-serif; font-size:smaller" cellpadding="5" id="roman_emperors">
+  <tr style="background-color:gray">
+   <td>Roman Emperor</td>
+   <td>Born</td>
+   <td>Died</td>
+  </tr>
+  
+  <tr>
+   <td><a class="awld-type-person" href="http://en.wikipedia.org/wiki/Augustus">Augustus</a></td>
+   <td><a href="http://en.wikipedia.org/wiki/63_BC">63 BCE</a> <a href="http://pleiades.stoa.org/places/423025">Rome</a></td>
+   <td><a href="http://en.wikipedia.org/wiki/14">14 CE</a> <a href="http://pleiades.stoa.org/places/423025">Rome</a></td>
+  </tr>
+  
+  <tr>
+   <td><a class="awld-type-person" href="http://en.wikipedia.org/wiki/Nero">Nero</a></td>
+   <td><a href="http://pleiades.stoa.org/places/422837">Antium</a></td>
+   <td><a href="http://pleiades.stoa.org/places/423025">Rome</a></td>
+  </tr>
+  
+   <tr>
+   <td><a class="awld-type-person" href="http://en.wikipedia.org/wiki/Hadrian">Hadrian</a></td>
+   <td><a href="http://pleiades.stoa.org/places/256231">Italica, Hispania</a></td>
+   <td><a href="http://pleiades.stoa.org/places/432716">Baiae</a></td>
+  </tr>
+  
+  <tr>
+   <td><a class="awld-type-person" href="http://en.wikipedia.org/wiki/Constantine_XI_Palaiologos">Constantine XI</a></td>
+   <td><a href="http://pleiades.stoa.org/places/520998">Constantinople</a></td>
+   <td><a href="http://pleiades.stoa.org/places/520998">Constantinople</a></td>
+  </tr>
+  </table>
+
+ <p id="trismegistos">A <a href="http://www.trismegistos.org/text/13">text</a> in Trismegistos.  Another from <a href="http://www.papyri.info/hgv/1357">Papyri.info</a>. These should display more information about the cited text.</p>
 
   <h2>Other links with comments</h2>
 
 
   <p>French language wikipedia link: <a class="awld-type-person noise" href="http://fr.wikipedia.org/wiki/Alexandre_le_Grand">Alexander the Great</a>. This is a fun foible as the popover shows the blurb for the French romance!</p>
   </div>
-  <hr>
+  <hr/>
   <p>awld.js is an open-source library funded by the <a href="http://isaw.nyu.edu">Institute for the Study of the Ancient World</a>. Contact Sebastian Heath &lt;sebastian.heath - nyu.edu&gt; with questions. Nick Rabinowitz (<a href="http://nickrabinowitz.com">website</a>) is the person making it all work.</p>
-  <p>p.s. This text is outside of the div marked 'class="awld-scope'" so that <a href="http://en.wikipedia.org/wiki/Augustus">this link</a> isn't affected.</p>
+  <p>p.s. This text is outside of the div marked 'class="awld-scope"' so that <a href="http://en.wikipedia.org/wiki/Augustus">this link</a> isn't affected. Also, in an ideal world, this page will be <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fdl.dropbox.com%2Fu%2F17002562%2Fawld-js-sfsheath%2Fawld-test.html&amp;charset=utf-8&amp;doctype=Inline&amp;group=0&amp;user-agent=W3C_Validator%2F1.3">valid xhtml</a> (or at least as valid as a page served from DropBox can be since DropBox forces all files to text/plain and ascii encoding). But since it gets edited a lot you mind find it in a non-valid state.</p>
   
 </body>
 </html>
