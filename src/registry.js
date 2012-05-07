@@ -7,5 +7,7 @@ define('registry', {
     'http://fr.wikipedia.org/wiki': 'wikipedia/page',
     'http://wikipedia.org/wiki': 'wikipedia/page',
     'http://data.perseus.org/people/smith': 'perseus/smith',
-    'http://opencontext.org': 'opencontext/opencontext'
+    'http://opencontext.org': 'opencontext/opencontext',
+    'http://www.trismegistos.org/text': 'trismegistos/text',
+    'http://www.papyri.info': 'papyri.info/text'
 });
