@@ -12,7 +12,7 @@ define(['jquery'], function($) {
             var getText = awld.accessor(html);
             return {
                 name: getText('h1'),
-                description: getText('table[results_table]'),
+                description: 'Provenance: ' +getText('td:contains(Provenance:) + td ') +'<br/><br/>Date: ' + getText('td:contains(Date:) + td '),
             };
         },
     };

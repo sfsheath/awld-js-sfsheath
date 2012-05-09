@@ -8,7 +8,8 @@
 if (typeof DEBUG === 'undefined') {
     DEBUG = true;
     AWLD_VERSION = 'debug';
-    POPUP_CLOSE = 'manual';
+    // POPUP_CLOSE = 'manual';
+    POPUP_CLOSE = 'auto';
     BASE_URL = '../../src/';
     // cache busting for development
     require.config({
