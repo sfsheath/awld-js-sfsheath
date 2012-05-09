@@ -24,7 +24,7 @@ define(['jquery'], function($) {
                     'hoard': 'place',
                     'mint': 'place',
                     'material': 'object',
-                    'type_series_item': 'object'
+                    'type_series_item': 'object',
                 },
                 type = $('[typeof]', xml).first().attr('typeof');
             if (type) return map[type];
