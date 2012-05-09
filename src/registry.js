@@ -9,5 +9,7 @@ define('registry', {
     'http://data.perseus.org/people/smith': 'perseus/smith',
     'http://opencontext.org': 'opencontext/opencontext',
     'http://www.trismegistos.org/text': 'trismegistos/text',
-    'http://www.papyri.info': 'papyri.info/text'
+    'http://www.papyri.info': 'papyri.info/text',
+    'http://finds.org.uk/database/artefacts': 'finds.org.uk/finds.org.uk',
+    'http://numismatics.org/collection': 'numismatics.org/numismatics.org'
 });
