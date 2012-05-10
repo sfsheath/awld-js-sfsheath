@@ -3,7 +3,7 @@ Awld.js
 
 Awld.js is a javascript library for Ancient World Linked Data. Dropped into an existing web page, it will add functionality and visual elements based on links to stable URIs relevant to the study of the Ancient World.
 
-You can see a working demo here: http://nrabinowitz.github.com/awld-js/test.html
+You can see a working demo here: http://isawnyu.github.com/awld-js/awld-test.html
 
 Who
 ---
