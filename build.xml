@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project name="awldjs-website" default="deploy">
     
-    <property name="ajs.src.dir" value="../awld-js"/>
+    <property name="ajs.src.dir" value="../awld-js-sfsheath"/>
     <property name="ajs.website.dir" value="."/>
     <property name="ajs.target.subdir" value="awld-js"/>
     <property name="ajs.target.dir" value="${ajs.website.dir}/${ajs.target.subdir}"/>
@@ -41,7 +41,7 @@
     </target>
     
     <!-- define git macro -->
-    <property name="git.exe" value="C:/Program Files/Git/bin/git.exe"/>
+    <property name="git.exe" value="git"/>
     
     <macrodef name="git">
         <attribute name="command" />
