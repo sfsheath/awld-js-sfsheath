@@ -5,6 +5,7 @@ define(['jquery'], function($) {
         name: 'Portable Antiquities Scheme Object',
         dataType: 'html',
         type: 'object',
+        corsEnabled: true,
         parseData: function(html) {
             var getText = awld.accessor(html);
             var imageURI = 'http://finds.org.uk/' + getText('a[rel="lightbox"] img', 'src')
