@@ -1,16 +1,16 @@
 // Core UI elements: index, popup
 
-define('ui',['jquery', 
-             'mustache',
-             'types',
-             'text!ui/core.css',
-             'text!ui/index.html',
-             'text!ui/index-grp.html', 
-             'text!ui/pop.html', 
-             'text!ui/details.html'], 
-    function($, Mustache, types, 
-             coreCss, indexTemplate, groupTemplate, 
-             popHtml, detailTemplate) {
+// define('ui',['jquery', 'mustache', 'types', 'text!ui/core.css', 'text!ui/index.html', 'text!ui/index-grp.html', 'text!ui/pop.html', 'text!ui/details.html'], function($, Mustache, types, coreCss, indexTemplate, groupTemplate, popHtml, detailTemplate) {
+
+define('ui',['jquery', 'mustache', 'types'], function($, Mustache, types) {
+
+              indexTemplate = "<div id=\"aw-index\" class=\"awld\">\n    <hr/>\n    <div class=\"aw-index\">\n        <div class=\"aw-panel\">\n            <div class=\"aw-ctrl\">\n                <span>Show by:</span> <div>Type</div> <div class=\"off\">Source</div>\n            </div>\n            <div>{{#t}}{{> grp}}{{/t}}</div>\n            <div style=\"display:none;\">{{#m}}{{> grp}}{{/m}}</div>\n        </div>\n        <div class=\"aw-tab\">\n            Ancient World Data: <span class=\"refs\">{{c}} Reference{{p}}</span>\n        </div>\n    </div>\n</div>";
+
+            groupTemplate = "<div class=\"aw-group\">\n    <h2>{{name}}</h2>\n    {{#res}}\n    <p><a href=\"{{href}}\" target=\"_blank\">{{name}}</a></p>\n    {{/res}}\n</div>";
+
+            popHtml = "<div class=\"awld-pop\">\n    <div class=\"awld-pop-inner\">\n        <div class=\"awld-content awld\"></div>\n        <div class=\"arrow\"></div>\n    </div>\n</div>";
+
+            detailTemplate = "<h2>{{#?.type}}<span class=\"res-type\">{{type}}:</span>{{/?.type}} {{name}}</h2>\n<div><a href=\"{{href}}\" target=\"_blank\">{{href}}</a></div>\n{{#?.latlon}}\n    <div class=\"media\"><img src=\"http://maps.google.com/maps/api/staticmap?size=120x120&amp;zoom=4&amp;markers=color:blue%7C{{latlon}}&amp;sensor=false&amp;maptype=terrain\"></div>\n{{/?.latlon}}\n<p>{{{description}}}</p>";
              
         var modules,
             $pop,
@@ -36,7 +36,9 @@ define('ui',['jquery',
         function loadStyles(styles) {
             // put in baseUrl (images, etc)
             styles = styles.replace(/\/\/\//g, awld.baseUrl);
-            var $style = $('<style>' + styles + '</style>').appendTo('head');
+            //var $style = $('<style>' + styles + '</style>').appendTo('head');
+            var $style = $('<link rel="stylesheet"  href="'+awld.baseUrl+'/ui/core.css" type="text/css"></link>').appendTo('head');
+        
         }
         
         // create the index of known references
@@ -223,7 +225,8 @@ define('ui',['jquery',
         // initialize core
         function init(loadedModules) {
             modules = loadedModules;
-            if (modules.length) loadStyles(coreCss);
+            //if (modules.length) loadStyles(coreCss);
+            if (modules.length) loadStyles('');
             addIndex('.awld-index');
         }
         
