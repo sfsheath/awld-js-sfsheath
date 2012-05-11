@@ -131,6 +131,8 @@ define('ui',['jquery', 'mustache', 'types'], function($, Mustache, types) {
             $pop = $pop || $(popHtml);
             // set content
             function setContent(html) {
+               // wrap in root level element to make it valid xml for xml contexts
+                html = "<div class='xml_wraper'>"+html+"</div>";
                 $('.awld-content', $pop)
                     .html(html);
                 $('.awld-pop-inner', $pop)
