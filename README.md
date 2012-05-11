@@ -10,8 +10,8 @@ Installing
 
 If all you want is the functionality that awld.js provides, then put these two lines in the 'head' element of your html page:
 
-  <script src="http://isawnyu.github.com/awld-js/lib/requirejs/require.min.js" type="text/javascript"></script>
-  <script src="http://isawnyu.github.com/awld-js/awld.js?autoinit" type="text/javascript"></script>
+  &lt;script src="http://isawnyu.github.com/awld-js/lib/requirejs/require.min.js" type="text/javascript">&lt;/script>
+  &lt;script src="http://isawnyu.github.com/awld-js/awld.js?autoinit" type="text/javascript">&lt;/script>
 
 
 Who
