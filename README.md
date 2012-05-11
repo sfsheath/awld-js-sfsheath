@@ -5,6 +5,15 @@ Awld.js is a javascript library for Ancient World Linked Data. Dropped into an e
 
 You can see a working demo here: http://isawnyu.github.com/awld-js/awld-test.html
 
+Installing
+----------
+
+If all you want is the functionality that awld.js provides, then put these two lines in the 'head' element of your html page:
+
+  <script src="http://isawnyu.github.com/awld-js/lib/requirejs/require.min.js" type="text/javascript"></script>
+  <script src="http://isawnyu.github.com/awld-js/awld.js?autoinit" type="text/javascript"></script>
+
+
 Who
 ---
 
