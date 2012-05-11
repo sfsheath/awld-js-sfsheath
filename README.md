@@ -1,3 +1,6 @@
+THIS IS AN OUTDATED REPOSITORY. See http://github.com/isawnyu/awld-js instead.
+
+
 Awld.js
 =======
 
