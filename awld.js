@@ -6,11 +6,11 @@
 
 // removed in production by uglify
 if (typeof DEBUG === 'undefined') {
-    DEBUG = true;
+    DEBUG = false;
     AWLD_VERSION = 'debug';
     // POPUP_CLOSE = 'manual';
     POPUP_CLOSE = 'auto';
-    BASE_URL = '../../src/';
+    // BASE_URL = '../../src/';
     // cache busting for development
     require.config({
         urlArgs: "bust=" +  (new Date()).getTime()
@@ -46,6 +46,13 @@ if (typeof DEBUG === 'undefined') {
      * Root namespace for the library
      */
     awld = {
+
+       /**
+        * @type Boolean
+        * debug flag
+       */
+        debug: false,
+
         /**
          * @type String
          * Base URL for dependencies; library and module 
