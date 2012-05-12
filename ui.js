@@ -4,6 +4,8 @@
 
 define('ui',['jquery', 'mustache', 'types'], function($, Mustache, types) {
 
+// these are the mustache templates. This works but a more elegant solution would be nice. Perhaps a template.js file.
+
               indexTemplate = "<div id=\"aw-index\" class=\"awld\">\n    <hr/>\n    <div class=\"aw-index\">\n        <div class=\"aw-panel\">\n            <div class=\"aw-ctrl\">\n                <span>Show by:</span> <div>Type</div> <div class=\"off\">Source</div>\n            </div>\n            <div>{{#t}}{{> grp}}{{/t}}</div>\n            <div style=\"display:none;\">{{#m}}{{> grp}}{{/m}}</div>\n        </div>\n        <div class=\"aw-tab\">\n            Ancient World Data: <span class=\"refs\">{{c}} Reference{{p}}</span>\n        </div>\n    </div>\n</div>";
 
             groupTemplate = "<div class=\"aw-group\">\n    <h2>{{name}}</h2>\n    {{#res}}\n    <p><a href=\"{{href}}\" target=\"_blank\">{{name}}</a></p>\n    {{/res}}\n</div>";
@@ -140,7 +142,7 @@ define('ui',['jquery', 'mustache', 'types'], function($, Mustache, types) {
             }
             // clear previous content
             // using xml frag may help in some contexts?
-            setContent('<span></span>');
+            setContent('');
             if ($.isFunction(content)) {
                 // this is a promise; give it a callback
                 content(setContent);
