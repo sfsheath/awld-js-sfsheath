@@ -29,7 +29,7 @@ define('ui',['jquery', 'mustache', 'types'], function($, Mustache, types) {
                 // seriously, though, Mustache
                 '?': {
                     latlon: !!data.latlon,
-                    type: type && type != 'Unknown'
+                    type: type && type != 'Uncategorized'
                 }
             });
         }

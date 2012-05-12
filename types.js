@@ -7,7 +7,7 @@ define('types', [], function() {
     }
     // get label for type
     function label(type) {
-        return labels[map(type)] || 'Unknown';
+        return labels[map(type)] || 'Uncategorized';
     }
     // get plural lable for type
     function pluralLabel(type) {
@@ -31,9 +31,10 @@ define('types', [], function() {
         TYPE_CITATION   = 'citation',
         TYPE_TEXT       = 'text',
         TYPE_OBJECT     = 'object',
+        TYPE_DESCRIPTION = 'description',
         // type maps
         types = [TYPE_CITATION, TYPE_EVENT, TYPE_PERSON, 
-                 TYPE_PLACE, TYPE_OBJECT, TYPE_TEXT],
+                 TYPE_PLACE, TYPE_OBJECT, TYPE_TEXT, TYPE_DESCRIPTION],
         labels = {},
         pluralLabels = {},
         typeMap = {};
@@ -45,6 +46,7 @@ define('types', [], function() {
     labels[TYPE_CITATION]   = 'Bibliographic Citation';
     labels[TYPE_TEXT]       = 'Text';
     labels[TYPE_OBJECT]     = 'Physical Object';
+    labels[TYPE_DESCRIPTION] = 'Description';
     
     // map alternate type names
     typeMap['dc:Agent']     = TYPE_PERSON;
@@ -54,6 +56,7 @@ define('types', [], function() {
     typeMap['dcmi:PhysicalObject']      = TYPE_OBJECT;
     typeMap['dcmi:Event']   = TYPE_EVENT;
     typeMap['dcmi:Text']    = TYPE_TEXT;
+    typeMap['dc:description'] = TYPE_DESCRIPTION;
     
     return {
         types: types,

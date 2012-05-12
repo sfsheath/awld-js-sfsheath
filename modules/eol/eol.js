@@ -1,33 +1,18 @@
-// Module: Nomisma.org API
+// Module: Encyclopedia of Life API
 
 define(['jquery'], function($) {
     return {
-        name: 'Nomisma.org Entities',
-        dataType: 'xml',
-        // data URI is the same
-        corsEnabled: true,
-        parseData: function(xml) {
-            var getText = awld.accessor(xml);
-            return {
-                name: getText('[property="skos:prefLabel"]'),
-                description: getText('[property="skos:definition"]'),
-                latlon: getText('[property="gml:pos"]').split(' '),
-                related: getText('[rel*="skos:related"]', 'href')
-            };
+        name: 'EOL Entries',
+        type: 'description',
+        // http://eol.org/api/pages/1.0/1045608.json?details=1
+        toDataUri: function(uri) {
+            var eolId = uri.match(/([0-9]+)/);
+            return 'http://eol.org/api/pages/1.0/' + eolId[0] + '.json?details=1';
         },
-        getType: function(xml) {
-            var map = {
-                    'roman_emperor': 'person',
-                    'ruler': 'person',
-                    'authority': 'person',
-                    'nomisma_region': 'place',
-                    'hoard': 'place',
-                    'mint': 'place',
-                    'material': 'object',
-                    'type_series_item': 'object'
-                },
-                type = $('[typeof]', xml).first().attr('typeof');
-            if (type) return map[type];
+        parseData: function(data) {
+            data.name = data.json.scientificName;
+            if (data.json.dataObjects[0]) {data.description = data.json.dataObjects[0].description};
+            return data;
         }
     };
 });
