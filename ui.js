@@ -12,7 +12,7 @@ define('ui',['jquery', 'mustache', 'types'], function($, Mustache, types) {
 
             popHtml = "<div class=\"awld-pop\">\n    <div class=\"awld-pop-inner\">\n        <div class=\"awld-content awld\"></div>\n        <div class=\"arrow\"></div>\n    </div>\n</div>";
 
-            detailTemplate = "<h2>{{#?.type}}<span class=\"res-type\">{{type}}:</span>{{/?.type}} {{name}}</h2>\n<div><a href=\"{{href}}\" target=\"_blank\">{{href}}</a></div>\n{{#?.latlon}}\n    <div class=\"media\"><img src=\"http://maps.google.com/maps/api/staticmap?size=120x120&amp;zoom=4&amp;markers=color:blue%7C{{latlon}}&amp;sensor=false&amp;maptype=terrain\"></div>\n{{/?.latlon}}\n<p>{{{description}}}</p>";
+            detailTemplate = "<h2>{{#?.type}}<span class=\"res-type\">{{type}}:</span>{{/?.type}} {{name}}</h2>\n<div><a href=\"{{href}}\" target=\"_blank\">{{href}}</a></div>\n{{#?.latlon}}\n    <div class=\"media\"><img src=\"http://maps.google.com/maps/api/staticmap?size=120x120&amp;zoom=4&amp;markers=color:blue%7C{{latlon}}&amp;sensor=false&amp;maptype=terrain\"/></div>\n{{/?.latlon}}\n<p>{{{description}}}</p>";
              
         var modules,
             $pop,
