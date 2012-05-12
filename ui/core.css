@@ -98,6 +98,7 @@
   left: 0;
   display: none;
   padding: 5px;
+  z-index:100;
 }
 .awld-pop.top {
   margin-top: -7px;
