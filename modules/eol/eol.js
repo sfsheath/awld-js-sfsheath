@@ -8,7 +8,7 @@ define(['jquery'], function($) {
         parseData: function(html) {
             var getText = awld.accessor(html);
             return {
-                name: "EOL Entry",
+                name: "EOL Entry: " + getText('h1.scientific_name'),
                 description: getText('#text_summary .copy'),
             };
         },

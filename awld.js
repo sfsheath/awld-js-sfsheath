@@ -6,7 +6,7 @@
 
 // removed in production by uglify
 if (typeof DEBUG === 'undefined') {
-    DEBUG = true;
+    DEBUG = false;
     AWLD_VERSION = 'debug';
     // POPUP_CLOSE = 'manual';
     POPUP_CLOSE = 'auto';
