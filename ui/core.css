@@ -85,8 +85,9 @@
 .awld .refs:hover {
   color: #D00;
 }
-.awld h2 {
+.awld-heading {
   font-size: 1em;
+  font-weight: bold;
   margin: .5em 0 0 0;
 }
 .awld p {

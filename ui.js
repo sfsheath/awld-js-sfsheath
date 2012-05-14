@@ -25,7 +25,7 @@ define('ui',['jquery', 'mustache', 'types'], function($, Mustache, types) {
 
       var groupTemplate = '\
 <div class="aw-group">\
-    <h2>{{name}}</h2>\
+    <div class="awld-heading">{{name}}</div>\
     {{#res}}\
     <p><a href="{{href}}" target="_blank">{{name}}</a></p>\
     {{/res}}\
@@ -40,7 +40,7 @@ define('ui',['jquery', 'mustache', 'types'], function($, Mustache, types) {
 </div>';
 
        var detailTemplate = '\
-<h2>{{#?.type}}<span class="res-type">{{type}}:</span>{{/?.type}} {{name}}</h2>\
+<div class="awld-heading">{{#?.type}}<span class="res-type">{{type}}:</span>{{/?.type}} {{name}}</div>\
 <div><a href="{{href}}" target="_blank">{{href}}</a></div>\
 {{#?.latlon}}\
     <div class="media"><img src="http://maps.google.com/maps/api/staticmap?size=120x120&amp;zoom=4&amp;markers=color:blue%7C{{latlon}}&amp;sensor=false&amp;maptype=terrain"/></div>\
