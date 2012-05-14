@@ -2,11 +2,12 @@
  * Copyright (c) 2012, Institute for the Study of the Ancient World, New York University
  * Licensed under the BSD License (see LICENSE.txt)
  * @author Nick Rabinowitz
+ * @author Sebastian Heath
  */
 
 // removed in production by uglify
 if (typeof DEBUG === 'undefined') {
-    DEBUG = false;
+    DEBUG = !(window.console === 'undefined');
     AWLD_VERSION = 'debug';
     // POPUP_CLOSE = 'manual';
     POPUP_CLOSE = 'auto';
