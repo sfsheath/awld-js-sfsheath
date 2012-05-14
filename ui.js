@@ -6,13 +6,49 @@ define('ui',['jquery', 'mustache', 'types'], function($, Mustache, types) {
 
 // these are the mustache templates. This works but a more elegant solution would be nice. Perhaps a template.js file.
 
-              var indexTemplate = "<div id=\"aw-index\" class=\"awld\">\n    <hr/>\n    <div class=\"aw-index\">\n        <div class=\"aw-panel\">\n            <div class=\"aw-ctrl\">\n                <span>Show by:</span> <div>Type</div> <div class=\"off\">Source</div>\n            </div>\n            <div>{{#t}}{{> grp}}{{/t}}</div>\n            <div style=\"display:none;\">{{#m}}{{> grp}}{{/m}}</div>\n        </div>\n        <div class=\"aw-tab\">\n            Ancient World Data: <span class=\"refs\">{{c}} Reference{{p}}</span>\n        </div>\n    </div>\n</div>";
+      var indexTemplate = '\
+<div id="aw-index" class="awld">\
+    <hr/>\
+    <div class="aw-index">\
+        <div class="aw-panel">\
+            <div class="aw-ctrl">\
+                <span>Show by:</span> <div>Type</div> <div class="off">Source</div>\
+            </div>\
+            <div>{{#t}}{{> grp}}{{/t}}</div>\
+            <div style="display:none;">{{#m}}{{> grp}}{{/m}}</div>\
+        </div>\
+        <div class="aw-tab">\
+            Ancient World Data: <span class="refs">{{c}} Reference{{p}}</span>\
+        </div>\
+    </div>\
+</div>';
 
-            var groupTemplate = "<div class=\"aw-group\">\n    <h2>{{name}}</h2>\n    {{#res}}\n    <p><a href=\"{{href}}\" target=\"_blank\">{{name}}</a></p>\n    {{/res}}\n</div>";
+      var groupTemplate = '\
+<div class="aw-group">\
+    <h2>{{name}}</h2>\
+    {{#res}}\
+    <p><a href="{{href}}" target="_blank">{{name}}</a></p>\
+    {{/res}}\
+</div>';
 
-            popHtml = "<div class=\"awld-pop\">\n    <div class=\"awld-pop-inner\">\n        <div class=\"awld-content awld\"></div>\n        <div class=\"arrow\"></div>\n    </div>\n</div>";
+      var popHtml = '\
+<div class="awld-pop">\
+    <div class="awld-pop-inner">\
+        <div class="awld-content awld"></div>\
+        <div class="arrow"></div>\
+    </div>\
+</div>';
 
-            var detailTemplate = "<h2>{{#?.type}}<span class=\"res-type\">{{type}}:</span>{{/?.type}} {{name}}</h2>\n<div><a href=\"{{href}}\" target=\"_blank\">{{href}}</a></div>\n{{#?.latlon}}\n    <div class=\"media\"><img src=\"http://maps.google.com/maps/api/staticmap?size=120x120&amp;zoom=4&amp;markers=color:blue%7C{{latlon}}&amp;sensor=false&amp;maptype=terrain\"/></div>\n{{/?.latlon}}\n<p>{{{description}}}</p>";
+       var detailTemplate = '\
+<h2>{{#?.type}}<span class="res-type">{{type}}:</span>{{/?.type}} {{name}}</h2>\
+<div><a href="{{href}}" target="_blank">{{href}}</a></div>\
+{{#?.latlon}}\
+    <div class="media"><img src="http://maps.google.com/maps/api/staticmap?size=120x120&amp;zoom=4&amp;markers=color:blue%7C{{latlon}}&amp;sensor=false&amp;maptype=terrain"/></div>\
+{{/?.latlon}}\
+{{#imageURI}}\
+    <div class="media"><img style="max-width:150px" src="{{imageURI}}"/></div>\
+{{/imageURI}}\
+<p>{{{description}}}</p>';
              
         var modules,
             $pop,
@@ -141,7 +177,6 @@ define('ui',['jquery', 'mustache', 'types'], function($, Mustache, types) {
                     .toggleClass('loading', !html);
             }
             // clear previous content
-            // using xml frag may help in some contexts?
             setContent('');
             if ($.isFunction(content)) {
                 // this is a promise; give it a callback

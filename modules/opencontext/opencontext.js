@@ -13,7 +13,8 @@ define(['jquery'], function($) {
             var imageURI = getText('[id = "all_media"] img', 'src')
             return {
                 name: "OpenContext " + getText('[id = "item_name"]'),
-                description: getText('[id = "item_class"]') + '<br/><img style="max-width:150" src="'+imageURI+'"/>'
+                description: getText('[id = "item_class"]'),
+                imageURI: imageURI,
             };
         },
     };
