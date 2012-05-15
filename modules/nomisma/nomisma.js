@@ -8,11 +8,18 @@ define(['jquery'], function($) {
         corsEnabled: true,
         parseData: function(xml) {
             var getText = awld.accessor(xml);
+
+            var latlon = getText('[property="gml:pos"]');
+            latlon = typeof latlon === 'undefined'?'':latlon.split(' ');
+
+            var related = getText('[rel*="skos:related"]', 'href')
+            related = typeof related === 'undefined'? '' : related;
+
             return {
                 name: getText('[property="skos:prefLabel"]'),
                 description: getText('[property="skos:definition"]'),
-                latlon: getText('[property="gml:pos"]').split(' '),
-                related: getText('[rel*="skos:related"]', 'href')
+                latlon: latlon,
+                related: related,
             };
         },
         getType: function(xml) {
