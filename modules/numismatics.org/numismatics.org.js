@@ -10,11 +10,12 @@ define(['jquery'], function($) {
         },
         parseData: function(xml) {
             var getText = awld.accessor(xml);
-            var imageURI = getText('[USE = "thumbnail"] *','xlink:href')
+            var imageURI = getText('[USE = "thumbnail"] *','xlink:href');
+            var description = typeof imageURI === 'undefined' ? '' : '<img style="max-width:100px" src="'+imageURI[0]+'"/><img style="max-width:100px" src="'+imageURI[1]+'"/>';
             return {
                 name: "ANS " + getText('title'),
-                description: '<img style="max-width:100px" src="'+imageURI[0]+'"/><img style="max-width:100px" src="'+imageURI[1]+'"/>'
-            };
-        },
-    };
+                description: description,
+        };
+    },
+ }
 });
