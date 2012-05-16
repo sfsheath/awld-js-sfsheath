@@ -1,4 +1,5 @@
 define('registry', {
+    'http://arachne.uni-koeln.de/item/': 'arachne.uni-koeln.de/arachne.uni-koeln.de',
     'http://data.perseus.org/citations/urn:cts': 'perseus/urn-cts',
     'http://data.perseus.org/people/smith': 'perseus/smith',
     'http://ecatalogue.art.yale.edu/detail.htm?objectId=': 'ecatalogue.art.yale.edu/ecatalogue.art.yale.edu',
