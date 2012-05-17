@@ -16,11 +16,13 @@ define(['jquery'], function($) {
             var description = getText('[property="skos:definition"]');
             description = typeof description === 'undefined' ? '' : description;
 
+            // try getting latlon as property
             var latlon = getText('[property="gml:pos"]');
-            latlon = typeof latlon === 'undefined' ? getText('[property="findspot"]','content') : latlon.split(' ');
+            // test if that worked, if not try as @content of @property = "findspot"
+            if ( typeof latlon === 'undefined' ) { latlon = getText('[property="findspot"]','content') };
+            // if stil undefined '', otherwise split
+            latlon = typeof latlon === 'undefined' ? '' : latlon.split(' ');
 
-            if ( typeof latlon === 'undefined'  ) { latlon = '' };
-            if ( typeof latlon === 'string' )  { latlon = latlon.split(' ') };
 
             var related = getText('[rel*="skos:related"]', 'href')
             related = typeof related === 'undefined'? '' : related;
