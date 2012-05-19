@@ -12,6 +12,7 @@ define('registry', {
     'http://nomisma.org/id': 'nomisma/nomisma',
     'http://numismatics.org/collection': 'numismatics.org/numismatics.org',
     'http://opencontext.org': 'opencontext/opencontext',
+    'http://pelagios.dme.ait.ac.at/api/places/http%3A%2F%2Fpleiades.stoa.org%2Fplaces%2F': 'pelagios.dme.ait.ac.at/place',
     'http://pleiades.stoa.org/places': 'pleiades/place',
     'http://wikipedia.org/wiki': 'wikipedia/page',
     'http://www.trismegistos.org/text': 'trismegistos/text',
