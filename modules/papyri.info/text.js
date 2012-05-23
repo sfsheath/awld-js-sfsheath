@@ -11,8 +11,8 @@ define(['jquery'], function($) {
         },
         parseData: function(html) {
             var getText = awld.accessor(html);
-            var h3Arr = getText('h3')
-            var mdtitle = getText('.mdtitle')
+            var h3Arr = getText('h3');
+            var mdtitle = getText('.mdtitle');
             return {
                 name: h3Arr[0] + "- " + mdtitle[0],
                 description: getText('#edition')
