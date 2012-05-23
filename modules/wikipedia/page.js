@@ -19,8 +19,6 @@ define(function() {
             var imageURI = $('.image img',$content);
             imageURI = typeof imageURI.first()[0] === 'object' ? imageURI = 'http:'+imageURI.first()[0].getAttribute('src') : ''; 
 
-            console.log ("########",imageURI);
-
             return {
                 name: data.title,
                 description: description,

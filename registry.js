@@ -17,5 +17,6 @@ define('registry', {
     'http://wikipedia.org/wiki': 'wikipedia/page',
     'http://www.trismegistos.org/text': 'trismegistos/text',
     'http://www.papyri.info': 'papyri.info/text',
+    'http://www.sudoc.fr/': 'www.sudoc.fr/www.sudoc.fr',
     'http://www.worldcat.org/oclc': 'worldcat/oclc',
 });
