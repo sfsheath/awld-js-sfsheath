@@ -19,3 +19,11 @@ Who
 ---
 
 Awld.js is a project of the Institute for the Study of the Ancient World at New York University. It is licensed under the BSD License; see LICENSE.txt for more infomation.
+
+Related Work
+------------
+
+The resources listed here are the work of third-parties. Follow the links for further details.
+
+* Wordpress Plugin: http://wordpress.org/extend/plugins/ancient-world-linked-data-for-wordpress/
+* Semantic Wiki Extension: http://www.mediawiki.org/wiki/Extension:AWLD
