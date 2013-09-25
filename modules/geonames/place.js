@@ -44,9 +44,15 @@ define(['jquery'], function($) {
                 })[0].name;
             }
 
+            var wikiuri = $(xml).find('gn\\:wikipediaArticle, wikipediaArticle').attr('rdf:resource');
+            wikiuri = typeof wikiuri === 'undefined'? '' : wikiuri;
+
             var description = 'A place described in the GeoNames gazetteer: ' + term + ". "
             if (countryname != '') {
                 description = description + "Located in the modern country of " + countryname + "."
+            }
+            if (wikiuri != '') {
+                description = description + '<br /><br/><a href="' + wikiuri + '">See also Wikipedia</a>.';
             }
 
             return {
