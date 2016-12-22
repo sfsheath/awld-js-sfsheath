@@ -6,7 +6,7 @@ define(function() {
         type: 'place',
         toDataUri: function(uri) {
             var pleiadesID = uri.match(/[0-9]+$/);
-            return 'http://pleiades.stoa.org/places/'+ pleiadesID + '/json';
+            return 'https://pleiades.stoa.org/places/'+ pleiadesID + '/json';
         },
         corsEnabled: true,
         // add name to data

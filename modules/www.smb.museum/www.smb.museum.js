@@ -13,6 +13,7 @@ define(['jquery'], function($) {
 
             var imageURI = getText('[id = "ansichtOben"] img', 'src');
             imageURI = typeof imageURI === 'string'? imageURI : imageURI[0];
+            // Site does not have SSL cert, content cannot be loaded into secure pages
             imageURI = 'http://www.smb.museum/ikmk/'+imageURI;
 
             return {

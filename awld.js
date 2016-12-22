@@ -221,11 +221,12 @@ if (typeof DEBUG === 'undefined') {
                     dataType = module.dataType,
                     jsonp = dataType == 'jsonp',
                     cors = module.corsEnabled,
+                    insecure = module.insecure && location.protocol == 'https:',
                     parseData = module.parseData,
                     fetching = false,
                     loaded = false,
                     yqlUrl = function(uri) {
-                        return 'http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20' + dataType +
+                        return 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20' + dataType +
                             '%20where%20url%3D%22' + uri + '%22&format=' + dataType +
                             '&diagnostics=false&callback=?';
                     };
@@ -288,7 +289,7 @@ if (typeof DEBUG === 'undefined') {
                             }
                             // make the request
                             if (DEBUG) console.log('Fetching ' + res.uri);
-                            if (jsonp || cors || module.local) $.ajax(options);
+                            if (!insecure && (jsonp || cors || module.local)) $.ajax(options);
                             else makeYqlRequest();
                         }
                     },
@@ -395,7 +396,7 @@ if (typeof DEBUG === 'undefined') {
                 // look for modules to initialize
                 $.each(registry, function(uriBase, moduleName) {
                     // look for links with this URI base
-                    var $refs = $('a[href^="' + uriBase + '"]', scope),
+                    var $refs = $('a[href*="' + uriBase + '"]', scope),
                         path = moduleName.indexOf('http') === 0 ? moduleName : modulePath + moduleName;
                     if ($refs.length) {
                         if (DEBUG) console.log('Found links for module: ' + moduleName);

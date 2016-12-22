@@ -10,7 +10,7 @@ define(['jquery'], function($) {
 
             var imageURI = getText('img[src*="image.php"]', 'src');
             imageURI = typeof imageURI === 'string'? imageURI : imageURI[0];
-            imageURI = 'http://arachne.uni-koeln.de/arachne/'+imageURI;
+            imageURI = 'https://arachne.uni-koeln.de/arachne/'+imageURI;
 
             return {
                 name: "Arachne " + getText('#project_title'),

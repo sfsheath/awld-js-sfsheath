@@ -9,10 +9,12 @@ define(['jquery'], function($) {
         dataType: 'xml',        
         toDataUri: function(uri) {
             var levels = uri.split('/');
+            // Site does not have valid SSL cert, content cannot be loaded into secure pages
             datauri = 'http://sws.geonames.org/' + levels[3] + '/about.rdf';
             return datauri;
         },
         corsEnabled: true,
+        insecure: true,
         parseData: function(xml) {
             var name = $(xml).find('gn\\:name, name').text();
             name = typeof name === 'undefined'? 'unnamed' : name;
